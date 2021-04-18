@@ -1,0 +1,79 @@
+%heading {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+}
+
+.heading-1 {
+  @extend %heading;
+  /* 36px @ 375px increasing to 54px @ 1200px */
+  font-size: clamp(
+    3.6rem,
+    calc(3.6rem + (54 - 36) * ((100vw - 375px) / (1200 - 375))),
+    5.4rem
+  );
+  letter-spacing: 0.6rem;
+  @media (max-width: $m) {
+    letter-spacing: 0.4rem;
+  }
+  @media (max-width: $xs) {
+    letter-spacing: 0.2rem;
+  }
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+.heading-2 {
+  @extend %heading;
+  /* 29px @ 375px increasing to 41px @ 1200px */
+  font-size: clamp(
+    2.9rem,
+    calc(2.9rem + (41 - 29) * ((100vw - 375px) / (1200 - 375))),
+    4.1rem
+  );
+  letter-spacing: 0.3rem;
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+.heading-3 {
+  @extend %heading;
+  /* 25px @ 375px increasing to 32px @ 1200px */
+  font-size: clamp(
+    2.5rem,
+    calc(2.5rem + (32 - 25) * ((100vw - 375px) / (1200 - 375))),
+    3.2rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    // link and visited state only if the button element is an <a> element
+    color: black;
+    background-color: transparent;
+    border: solid black 2px;
+    border-radius: 0.4rem;
+    line-height: 1;
+    transition: 0.3s all ease-in-out;
+    padding: 1rem 1.6rem;
+    transition: all 0.3s;
+    font-family: inherit;
+    cursor: pointer;
+    backface-visibility: hidden;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translate(4px, 3px);
+    }
+  }
+}
