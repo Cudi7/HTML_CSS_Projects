@@ -1,0 +1,21 @@
+.clipboard {
+  padding: 0 2.3rem 11rem;
+  text-align: center;
+
+  & .heading-2 {
+    margin: 0 auto 2.2rem;
+    width: 70vw;
+  }
+
+  & .paragraph {
+    margin: 0 auto 5rem;
+    width: 70vw;
+    max-width: 67rem;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+    max-width: 79rem;
+  }
+}

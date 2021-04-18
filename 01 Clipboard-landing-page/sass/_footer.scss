@@ -1,0 +1,46 @@
+.footer {
+  text-align: center;
+  padding: 3.7rem 8.5rem;
+  background-color: rgb(238, 234, 234);
+
+  &__contact--logo {
+    margin-bottom: 3.4rem;
+  }
+
+  &__contact--items {
+    @media (min-width: $l) {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 15rem;
+    }
+    & > *:not(:last-child) {
+      margin-bottom: 2.7rem;
+    }
+
+    & :last-child {
+      margin-bottom: 4rem;
+    }
+  }
+  &__contact--social {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    @media (min-width: $m) {
+      flex-direction: column;
+    }
+    @media (min-width: $l) {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: $m) {
+    display: flex;
+    gap: 5rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @media (min-width: $l) {
+    justify-content: space-between;
+  }
+}
