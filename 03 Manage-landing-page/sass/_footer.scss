@@ -1,0 +1,84 @@
+.footer {
+  background-color: var(--Very-Dark-Blue);
+  padding: 5rem clamp(2rem, 6vw, 15rem);
+  color: var(--Vary-Light-Gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+
+  @media (min-width: $m) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      'logo   items items input'
+      'social items items copyright';
+  }
+
+  &__social {
+    grid-area: social;
+
+    &--media {
+      @media (min-width: $m) {
+        display: flex;
+        margin-right: 0;
+      }
+      a {
+        &:hover img {
+          transform: translateY(1px);
+        }
+      }
+      & > *:not(:last-child) {
+        margin-right: 10vw;
+        @media (min-width: $m) {
+          margin-right: 1vw;
+        }
+      }
+    }
+  }
+
+  &__links {
+    grid-area: items;
+    width: 80%;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    li {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--Bright-Red);
+      }
+    }
+  }
+
+  &__contact {
+    grid-area: input;
+    width: 100%;
+    text-align: center;
+    & .btn {
+      box-shadow: none;
+    }
+
+    & #contact {
+      padding: 1.2rem;
+      border-radius: 10rem;
+      outline: none; // removes selected area
+      border: transparent; //removes weird black border
+      width: 70%;
+    }
+  }
+}
+
+.attribution {
+  background-color: var(--Very-Dark-Blue);
+  color: var(--Vary-Light-Gray);
+  & a {
+    color: var(--Bright-Red);
+  }
+}

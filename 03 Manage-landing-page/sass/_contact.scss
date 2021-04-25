@@ -1,0 +1,46 @@
+.contact {
+  margin-top: 5rem;
+  padding: 7rem clamp(2rem, 6vw, 15rem);
+  background-color: var(--Bright-Red);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  @media (min-width: $m) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  & .heading-2 {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 40rem;
+    @media (min-width: $m) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  & .btn {
+    background-color: #fff;
+    color: var(--Bright-Red);
+  }
+
+  &__img {
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: -6%;
+    pointer-events: none;
+  }
+
+  &__img--2 {
+    position: absolute;
+    opacity: 0.1;
+    right: -40%;
+    bottom: 40%;
+    pointer-events: none;
+  }
+}

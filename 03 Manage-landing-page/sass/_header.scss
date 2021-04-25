@@ -1,0 +1,115 @@
+.header {
+  padding: 4rem clamp(2rem, 6vw, 15rem) 7rem;
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    top: -25%;
+    right: -15%;
+    pointer-events: none;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--logo {
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    ul {
+      display: none;
+      @media (min-width: $m) {
+        display: flex;
+      }
+      & > *:not(:last-child) {
+        margin-right: 2rem;
+      }
+      li {
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          color: var(--Dark-Grayish-Blue);
+        }
+      }
+    }
+    & .btn {
+      display: none;
+      @media (min-width: $m) {
+        display: flex;
+      }
+    }
+
+    &--hamburguer {
+      width: 2.5rem;
+      height: 0.4rem;
+      background-color: var(--Very-Dark-Blue);
+      cursor: pointer;
+      display: block;
+
+      @media (min-width: $m) {
+        display: none;
+      }
+      &::before,
+      &::after {
+        content: '';
+        width: 2.5rem;
+        height: 0.4rem;
+        background-color: var(--Very-Dark-Blue);
+        position: absolute;
+      }
+      &::before {
+        margin-top: 0.7rem;
+      }
+      &::after {
+        margin-top: -0.7rem;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 5rem;
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+
+    @media (min-width: $m) {
+      flex-flow: row;
+      justify-content: center;
+    }
+    &-left {
+      text-align: center;
+      @media (min-width: $m) {
+        max-width: 44rem;
+        text-align: left;
+      }
+
+      h1 {
+        margin: 2.5rem 0 1.5rem;
+      }
+      p {
+        margin: 0 auto 2rem;
+        width: 90%;
+        @media (min-width: $m) {
+          margin: 0 0 2rem;
+        }
+      }
+
+      & .btn {
+        margin-top: 1rem;
+        padding: 1.5rem 3rem;
+      }
+    }
+
+    &-right {
+      & img {
+        width: 100%;
+        max-width: 53rem;
+      }
+    }
+  }
+}

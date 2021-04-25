@@ -1,0 +1,79 @@
+%heading {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+}
+
+.heading-1 {
+  @extend %heading;
+  margin-bottom: 4rem;
+  /* 36px @ 375px increasing to 54px @ 1200px */
+  font-size: clamp(
+    3.6rem,
+    calc(3.6rem + (54 - 36) * ((100vw - 375px) / (1200 - 375))),
+    5.4rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+.heading-2 {
+  @extend %heading;
+  margin-bottom: 3rem;
+  /* 29px @ 375px increasing to 41px @ 1200px */
+  font-size: clamp(
+    2.9rem,
+    calc(2.9rem + (41 - 29) * ((100vw - 375px) / (1200 - 375))),
+    4.1rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+.heading-3 {
+  @extend %heading;
+  /* 25px @ 375px increasing to 32px @ 1200px */
+  font-size: clamp(
+    2.5rem,
+    calc(2.5rem + (32 - 25) * ((100vw - 375px) / (1200 - 375))),
+    3.2rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    // link and visited state only if the button element is an <a> element
+    color: white;
+    background-color: var(--Bright-Red);
+    border: solid var(--Bright-Red) 2px;
+    border-radius: 10rem;
+    line-height: 1;
+    transition: 0.3s all ease-in-out;
+    padding: 1.6rem 2.6rem;
+    font-family: inherit;
+    cursor: pointer;
+    backface-visibility: hidden;
+    box-shadow: 0px 3px 5px 0px rgba(242, 95, 58, 0.6);
+    font-weight: 700;
+
+    &:hover {
+      opacity: 0.7;
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translate(4px, 3px);
+    }
+  }
+}
+
+.paragraph {
+  color: var(--Dark-Grayish-Blue);
+  margin-bottom: 4rem;
+  line-height: 1.7;
+}
