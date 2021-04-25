@@ -1,6 +1,6 @@
 ## Welcome! 👋
 
-# Frontend Mentor - Clipboard landing page
+# Clipboard landing page
 
 Front-end coding challenge from [Frontend Mentor]
 
