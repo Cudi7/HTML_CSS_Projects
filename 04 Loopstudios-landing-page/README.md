@@ -1,6 +1,6 @@
 ## Welcome! 👋
 
-# Frontend Mentor - Loopstudios landing page
+# Loopstudios landing page
 
 Front-end coding challenge from [Frontend Mentor]
 
