@@ -1,0 +1,92 @@
+%heading {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  color: var(--Very-Dark-Blue);
+}
+
+.heading-1 {
+  @extend %heading;
+  /* 36px @ 375px increasing to 54px @ 1200px */
+  font-size: clamp(
+    3.6rem,
+    calc(3.6rem + (54 - 36) * ((100vw - 375px) / (1200 - 375))),
+    5.4rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+.heading-2 {
+  @extend %heading;
+  /* 29px @ 375px increasing to 41px @ 1200px */
+  font-size: clamp(
+    2.9rem,
+    calc(2.9rem + (41 - 29) * ((100vw - 375px) / (1200 - 375))),
+    4.1rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+.heading-3 {
+  @extend %heading;
+  margin-bottom: 3rem;
+  /* 25px @ 375px increasing to 32px @ 1200px */
+  font-size: clamp(
+    2.5rem,
+    calc(2.5rem + (32 - 25) * ((100vw - 375px) / (1200 - 375))),
+    3.2rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+.heading-4 {
+  @extend %heading;
+  margin-bottom: 2rem;
+  /* 25px @ 375px increasing to 32px @ 1200px */
+  font-size: clamp(
+    2rem,
+    calc(2rem + (22 - 20) * ((100vw - 375px) / (1200 - 375))),
+    2.2rem
+  );
+  /* Note: The calc base value (1.6rem) MUST be stated in REM to maintain accessibility */
+  /* Where: calc = min_font_size_in_rem + (max_font_size - min_font_size) * ((100vw - min_viewport_including_px_unit) / (max_viewport - min_viewport)) */
+}
+
+.paragraph {
+  color: var(--Grayish-Violet);
+  line-height: 1.7;
+  margin-bottom: 3.6rem;
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    // link and visited state only if the button element is an <a> element
+    color: var(--Grayish-Violet);
+    background-color: transparent;
+    border-radius: 3rem;
+    padding: 1rem 3rem;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    backface-visibility: hidden;
+    border: transparent;
+    transition: background-color 0.2s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--cyan);
+    color: white;
+    &:hover {
+      background-color: rgb(105, 93, 137);
+    }
+  }
+}

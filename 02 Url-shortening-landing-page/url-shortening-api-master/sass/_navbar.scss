@@ -1,0 +1,63 @@
+.header {
+  padding-top: 4rem;
+
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: $m) {
+      &--logo {
+        margin-right: 4.3rem;
+      }
+    }
+
+    &--items {
+      display: none;
+
+      @media (min-width: $m) {
+        display: flex;
+        color: var(--Grayish-Violet);
+        margin-right: auto;
+        cursor: pointer;
+
+        & li:not(:last-child) {
+          margin-right: 3rem;
+        }
+        & li {
+          transition: color 0.2s ease-in-out;
+          &:hover {
+            color: var(--Very-Dark-Violet);
+          }
+        }
+      }
+    }
+
+    &--cta {
+      display: none;
+
+      @media (min-width: $m) {
+        display: block;
+
+        &--cta > *:not(:last-child) {
+          margin-right: 3.5rem;
+        }
+      }
+    }
+
+    &--hamburger {
+      display: block;
+      cursor: pointer;
+      @media (min-width: $m) {
+        display: none;
+      }
+
+      & svg path {
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover svg path {
+        fill: var(--Very-Dark-Blue);
+      }
+    }
+  }
+}

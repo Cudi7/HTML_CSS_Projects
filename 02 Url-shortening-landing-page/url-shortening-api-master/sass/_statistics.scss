@@ -1,0 +1,84 @@
+.statistics {
+  background-color: rgb(240, 241, 246);
+  position: relative;
+
+  &__content {
+    padding: 21rem 0 11.5rem;
+    position: relative;
+    &--text {
+      text-align: center;
+    }
+
+    &--cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-gap: 1rem;
+      margin-top: 5rem;
+      text-align: center;
+      justify-items: center;
+
+      @media (min-width: $l) {
+        grid-gap: 4.5rem;
+        justify-items: stretch;
+        text-align: left;
+      }
+      @media (min-width: $m) {
+        grid-gap: 3.5rem;
+      }
+
+      .wrapper {
+        padding: 8rem 2rem 0;
+        position: relative;
+        box-shadow: 2px 3px 4px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        background-color: #fff;
+        margin-top: 7rem;
+        // width: 30rem;
+        z-index: 1;
+
+        @media (min-width: $l) {
+          height: min-content;
+          &:nth-of-type(2) {
+            margin-top: 10rem;
+          }
+          &:nth-of-type(3) {
+            margin-top: 15rem;
+          }
+        }
+
+        .logo {
+          background-color: var(--dark-violet);
+          padding: 2rem;
+          border-radius: 50%;
+          position: absolute;
+          top: -15%;
+          left: 50%;
+          transform: translateX(-50%);
+          @media (min-width: $l) {
+            left: 20%;
+          }
+        }
+      }
+    }
+
+    &::after {
+      content: ''; // ::before and ::after both require content
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3%;
+      height: 50%;
+      background-color: var(--cyan);
+
+      @media (min-width: 570px) {
+        bottom: 50%;
+        width: 50%;
+        height: 1%;
+      }
+      @media (min-width: $l) {
+        bottom: 30%;
+      }
+    }
+  }
+}

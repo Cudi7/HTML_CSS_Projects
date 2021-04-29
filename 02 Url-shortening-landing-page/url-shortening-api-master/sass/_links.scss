@@ -1,0 +1,16 @@
+.links {
+  padding: 6rem 0 5.3rem;
+  background-color: var(--dark-violet);
+  background-image: url(../images/bg-boost-desktop.svg);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & .heading-3 {
+      color: white;
+    }
+  }
+}

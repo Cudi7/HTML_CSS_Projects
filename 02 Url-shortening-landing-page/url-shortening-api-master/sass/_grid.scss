@@ -1,0 +1,51 @@
+.container {
+  display: grid;
+  grid-template-columns: minmax(2rem, 5vw) repeat(2, minmax(auto, 1fr)) minmax(
+      2rem,
+      5vw
+    );
+  grid-template-areas:
+    '. nav nav .'
+    '. main main main'
+    '. form form .'
+    'statistic statistic statistic statistic'
+    'links links links links'
+    'footer footer footer footer';
+
+  @media (min-width: $m) {
+    grid-template-columns:
+      minmax(auto, 10rem) repeat(8, minmax(10rem, 1fr))
+      minmax(auto, 10rem);
+    grid-template-areas:
+      '. nav nav nav nav nav nav nav nav .'
+      '.  main main main main main main main main main'
+      '.  form form form form form form form form .'
+      'statistic  statistic statistic statistic statistic statistic statistic statistic statistic statistic'
+      'links  links links links links links links links links links'
+      'footer  footer footer footer footer footer footer footer footer footer';
+  }
+
+  .header {
+    grid-area: nav;
+  }
+  .main {
+    grid-area: main;
+  }
+  .form {
+    grid-area: form;
+  }
+  .statistics {
+    grid-area: statistic;
+
+    padding: 0 3rem;
+    @media (min-width: $m) {
+      padding: 0 10rem;
+    }
+  }
+  .links {
+    grid-area: links;
+  }
+  .footer {
+    grid-area: footer;
+  }
+}
