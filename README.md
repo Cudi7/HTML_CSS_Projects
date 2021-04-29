@@ -7,5 +7,7 @@ These are all my only-HTML/CSS(SASS) (no JavaScript) projects that I have been w
 
 They were first all done with desktop approach and redone to mobile first design, which simplified the overall code, and make it better
 
+I use SCSS and BEM notation
+
 **Have fun!** 🚀
 
